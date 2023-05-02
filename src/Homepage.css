@@ -1,56 +1,120 @@
 header {
-    background-color: #f1f1f1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 20px;
+    background-color: rgb(28, 27, 27);
+    color: #fff;
 }
 
 nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+    display: flex;
+    list-style: none;
 }
 
-nav li {
-    float: left;
+nav ul li {
+    margin-right: 20px;
 }
 
-nav a {
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
+nav ul li a {
+    color: #fff;
     text-decoration: none;
+    font-size: 20px;
+    position: relative;
+    transition: all 0.2s ease-out;
 }
 
-nav a:hover {
-    background-color: #ddd;
-    color: black;
+nav ul li a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #fff;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.2s ease-out 0s;
 }
 
-main {
+nav ul li a:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+.featured {
     padding: 20px;
 }
 
-section {
-    margin-bottom: 40px;
+.featured img {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+    transition: transform 0.3s ease;
 }
 
-section h2 {
-    margin-top: 0;
+.featured img:hover {
+    transform: scale(1.05);
 }
 
-section.featured img {
-    float: left;
-    margin-right: 20px;
+.recent {
+    padding: 20px;
 }
 
-section.recent img {
-    margin-right: 20px;
+.recent ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.recent li {
     margin-bottom: 20px;
+    width: calc(50% - 10px);
+}
+
+.recent li img {
+    display: block;
+    margin: auto;
+    max-width: 100%;
 }
 
 footer {
-    background-color: #f1f1f1;
-    text-align: center;
-    padding: 10px;
+    background-color: rgb(28, 27, 27);
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-info {
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+}
+
+.footer-info h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-info p {
+    margin-bottom: 5px;
+}
+
+.footer-icons {
+    display: flex;
+}
+
+.footer-icons a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    margin-right: 10px;
+    transition: all 0.2s ease-out;
+}
+
+.footer-icons a:hover {
+    transform: translateY(-3px);
 }
